@@ -1,0 +1,6 @@
+.overlay{
+  position: fixed; 
+
+  color: wheat;
+  z-index: 2;
+}
