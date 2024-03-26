@@ -6,6 +6,7 @@ import ReactFlow, {
   useNodesState,
   useEdgesState,
   addEdge,
+  
   getOutgoers,
   useReactFlow,
   ReactFlowProvider,
@@ -25,10 +26,15 @@ function Flow() {
   // custom widgets : ends
 
   useEffect(()=>{
-    window.addNode=(n)=>{
-      console.log(n);
-      setEdges(...nodes,n);
-    }
+    console.log("on user effect ");
+    window.addEventListener("message", (event) => {
+      console.log(event);
+    }, false);
+    window.addEventListener("addNode", (event) => {
+      console.log(event);
+      setNodes([...getNodes(),event.detail]);
+    }, false);
+   
   },[])
   const isValidConnection = useCallback(
     (connection) => {
@@ -65,23 +71,13 @@ function Flow() {
         nodeTypes={customNodes}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
-        // onEdgeUpdate={(_) => {
-        //   // window.flutter_inappwebview.callHandler("handlerFooWithArgs", _);
-        //   console.log(_);
-        // }}
-        onChange={()=>{
-          console.log({
-            nodes:nodes,
-            edges:edges
-          })
-        }}
         selectionOnDrag
         isValidConnection={isValidConnection}
         onConnect={onConnect}
       >
         <Controls  />
         <MiniMap />
-        <Background variant="dots" gap={12} size={1} color="#000000" />
+        <Background variant="dots" gap={12} size={1} color="#fff" />
       </ReactFlow>
     </div>
   );
