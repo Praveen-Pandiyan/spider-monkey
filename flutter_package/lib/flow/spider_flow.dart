@@ -27,7 +27,7 @@ class _SpiderFlowState extends State<SpiderFlow> {
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
-          height: MediaQuery.sizeOf(context).height*0.7,
+          height: MediaQuery.sizeOf(context).height * 0.7,
           child: InAppWebView(
             initialUrlRequest: URLRequest(url: WebUri(widget.modulePath)),
             onWebViewCreated: (controller) async {
@@ -43,8 +43,7 @@ class _SpiderFlowState extends State<SpiderFlow> {
                   allowedOriginRules: Set.from(["http"]),
                   onPostMessage:
                       (message, sourceOrigin, isMainFrame, replyProxy) {
-                    replyProxy.postMessage(WebMessage(data: """
-          {
+                    replyProxy.postMessage(WebMessage(data: """{
                 detail: { id: '1', data: { label: 'Node 1' },position: { x: 150, y: 0 },}
               }
           """));

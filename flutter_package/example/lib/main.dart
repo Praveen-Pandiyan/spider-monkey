@@ -47,13 +47,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          controller.addNode("""{
-            "detail": {
-              "id": '${UniqueKey()}',
-              "data": {"label": 'node ${UniqueKey()}'},
-              "position": {"x": 0, "y": 100},
-            }
-          }""");
+         try {
+            controller.test();
+         } catch (e) {
+           print(e);
+         }
+          // controller.addNode("""{
+          //   "detail": {
+          //     "id": '${UniqueKey()}',
+          //     "data": {"label": 'node ${UniqueKey()}'},
+          //     "position": {"x": 0, "y": 100},
+          //   }
+          // }""");
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

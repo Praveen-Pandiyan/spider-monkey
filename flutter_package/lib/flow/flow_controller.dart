@@ -12,4 +12,7 @@ class FlowController {
     window.dispatchEvent(new CustomEvent("addNode",$n));
   """);
   }
+  test(){
+    controller?.evaluateJavascript(source: "document.getElementById('root').style.display='none'");
+  }
 }
