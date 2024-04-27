@@ -45,24 +45,24 @@ class _MyHomePageState extends State<MyHomePage> {
           onChange: (_) {}),
       // SpiderFlow(modulePath: "http://192.168.52.197:3000", initialVal: {}, onChange: (_){}),
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-         try {
-            controller.test();
-         } catch (e) {
-           print(e);
-         }
-          // controller.addNode("""{
-          //   "detail": {
-          //     "id": '${UniqueKey()}',
-          //     "data": {"label": 'node ${UniqueKey()}'},
-          //     "position": {"x": 0, "y": 100},
-          //   }
-          // }""");
-        },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //    try {
+      //       controller.test();
+      //    } catch (e) {
+      //      print(e);
+      //    }
+      //     // controller.addNode("""{
+      //     //   "detail": {
+      //     //     "id": '${UniqueKey()}',
+      //     //     "data": {"label": 'node ${UniqueKey()}'},
+      //     //     "position": {"x": 0, "y": 100},
+      //     //   }
+      //     // }""");
+      //   },
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.add),
+      // ),
     );
   }
 }

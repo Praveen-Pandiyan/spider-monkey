@@ -59,8 +59,10 @@ class _SpiderFlowState extends State<SpiderFlow> {
             },
           ),
         ),
-        GestureDetector(
-          onTap: () {
+        TextButton.icon(
+          icon: const Icon(Icons.add),
+          label: const Text("Add"),
+          onPressed: () {
             webController!.evaluateJavascript(source: """
     window.dispatchEvent(new CustomEvent("addNode",{
             "detail": {
@@ -71,7 +73,6 @@ class _SpiderFlowState extends State<SpiderFlow> {
           }));
   """);
           },
-          child: Text("add"),
         ),
       ],
     );
