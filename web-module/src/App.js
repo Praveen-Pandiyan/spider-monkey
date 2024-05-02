@@ -6,7 +6,7 @@ import ReactFlow, {
   useNodesState,
   useEdgesState,
   addEdge,
-  
+  useOnSelectionChange,
   getOutgoers,
   useReactFlow,
   ReactFlowProvider,
@@ -34,8 +34,20 @@ function Flow() {
       console.log(event);
       setNodes([...getNodes(),event.detail]);
     }, false);
-   
+    window.addEventListener("addEdge", (event) => {
+      console.log(event);
+      setEdges([...getEdges(),event.detail]);
+    }, false);
   },[])
+  useOnSelectionChange({
+    onChange: ({ nodes, edges }) => {
+      console.log(nodes);
+      window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
+        window.flutter_inappwebview.callHandler('onSelect', nodes);
+       });
+   
+    },
+  });
   const isValidConnection = useCallback(
     (connection) => {
       const nodes = getNodes();

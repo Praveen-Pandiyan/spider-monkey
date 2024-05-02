@@ -19,8 +19,8 @@ class Node {
       this.position,
       this.sourcePosition,
       this.targetPosition,
-      this.draggable,
-      this.selectable});
+      this.draggable=true,
+      this.selectable=true});
 
   Node.fromJson(Map<String, dynamic> json) {
     id = json['id'];

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spider_monkey/model/node.dart';
 import 'package:spider_monkey/spider_monkey.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Flow'),
     );
   }
 }
@@ -34,35 +35,31 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
+     
       body: SpiderFlow(
           modulePath: "https://trizda-saqqep.web.app",
           controller: controller,
-          initialVal: {},
+          initialNode: [Node(
+            id: "efreedef",
+            data: { 'label': "Node B efre" },
+            position: Position(x: 150,y: 150),
+            
+          )],
           onChange: (_) {}),
       // SpiderFlow(modulePath: "http://192.168.52.197:3000", initialVal: {}, onChange: (_){}),
 
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //    try {
-      //       controller.test();
-      //    } catch (e) {
-      //      print(e);
-      //    }
-      //     // controller.addNode("""{
-      //     //   "detail": {
-      //     //     "id": '${UniqueKey()}',
-      //     //     "data": {"label": 'node ${UniqueKey()}'},
-      //     //     "position": {"x": 0, "y": 100},
-      //     //   }
-      //     // }""");
-      //   },
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.add),
-      // ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+        
+          controller.addNode(Node(id: "hello",
+          data: {'label':"here"},
+          draggable: true,
+          position: Position(x: 100,y:150)
+          ));
+        },
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
