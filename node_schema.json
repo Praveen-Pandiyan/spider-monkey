@@ -28,7 +28,7 @@
     "label": "this is an edge label",
     "sourceHandle": "handle-1",
     "markerEnd": {
-      "type": "MarkerType.ArrowClosed"
+      "type": "MarkerType"
     }
   }
 }
