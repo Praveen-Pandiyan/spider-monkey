@@ -1,0 +1,34 @@
+{
+  "node": {
+    "id": 5,
+    "type": "output",
+    "data": {
+      "label": "custom style"
+    },
+    "className": "circle",
+    "style": {
+      "background": "#2B6CB0",
+      "color": "white"
+    },
+    "position": {
+      "x": 400,
+      "y": 200
+    },
+    "sourcePosition": "Position.Right",
+    "targetPosition": "Position.Left",
+    "draggable": false,
+    "selectable": false
+  },
+  "edge": {
+    "id": "e4-6",
+    "source": 4,
+    "target": "6",
+    "type": "smoothstep",
+    "animated": true,
+    "label": "this is an edge label",
+    "sourceHandle": "handle-1",
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed"
+    }
+  }
+}
