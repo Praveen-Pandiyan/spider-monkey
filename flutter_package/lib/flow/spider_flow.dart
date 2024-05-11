@@ -28,7 +28,9 @@ class _SpiderFlowState extends State<SpiderFlow> {
   @override
   Widget build(BuildContext context) {
     return InAppWebView(
+     
       initialUrlRequest: URLRequest(url: WebUri(widget.modulePath)),
+      
       onWebViewCreated: (controller) async {
         setState(() {
           webController = controller;

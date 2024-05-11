@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
      
       body: SpiderFlow(
-          modulePath: "https://trizda-saqqep.web.app",
+          modulePath: "<<your web hosting url>>",
           controller: controller,
           initialNode: [Node(
             id: "efreedef",
